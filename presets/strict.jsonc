@@ -1,0 +1,23 @@
+{
+  "version": 3,
+  "rules": {
+    "allow": [
+      { "match": "git status*", "reason": "git 只读查看" },
+      { "match": "git diff*", "reason": "git 只读查看" },
+      { "match": "git log*", "reason": "git 只读查看" },
+      { "match": "ls *", "reason": "只读查看" },
+      { "match": "pwd", "reason": "只读查看" },
+      { "match": "cat *", "reason": "只读查看" },
+      { "match": "grep *", "reason": "搜索" },
+      { "match": "rg *", "reason": "搜索" },
+      { "match": "find *", "reason": "查找" },
+      { "match": "echo *", "reason": "输出" }
+    ],
+    "deny": [
+      { "match": "rm *", "reason": "严格模式下禁止一切删除" },
+      { "match": "git push*", "reason": "严格模式下禁止直接推送" },
+      { "match": "git reset*", "reason": "严格模式下禁止重置" }
+    ],
+    "review": []
+  }
+}
